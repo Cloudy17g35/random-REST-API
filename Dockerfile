@@ -1,10 +1,17 @@
-FROM golang:1.18-alpine
-WORKDIR /app
-COPY go.mod ./
-COPY go.sum ./
-RUN go mod download
-COPY *.go ./
-RUN go build -o /docker-gs-ping
-EXPOSE 8080
-CMD ["docke/docker-gs-ping"]
+FROM golang:latest
 
+WORKDIR /app
+
+COPY go.mod .
+
+COPY go.sum .
+
+RUN go mod download
+
+COPY . .
+
+ENV PORT 8080
+
+RUN go build
+
+CMD ["./random-api"]

@@ -17,6 +17,5 @@ func main() {
 	timeout.WithTimeout(default_timeout),
     timeout.WithHandler(handlers.RandomMeanHandler)),
 	)
-
-	engine.Run("localhost:8080")
+	engine.Run()
 }
