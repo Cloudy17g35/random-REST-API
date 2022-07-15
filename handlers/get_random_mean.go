@@ -2,13 +2,13 @@ package handlers
 
 import (
 	"net/http"
-	"random-api/httpd/api_response"
-	"random-api/httpd/converters"
-	"random-api/httpd/external_requests"
-	"random-api/httpd/invalid_responses"
-	"random-api/httpd/logger"
-	"random-api/httpd/stat_funcs"
-	"random-api/httpd/validator"
+	"random-api/api_response"
+	"random-api/converters"
+	"random-api/external_requests"
+	"random-api/invalid_responses"
+	"random-api/logger"
+	"random-api/stat_funcs"
+	"random-api/validator"
 	"time"
 	"github.com/gin-gonic/gin"
 )

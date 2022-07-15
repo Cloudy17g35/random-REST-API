@@ -2,7 +2,7 @@ package main
 
 import (
 	"time"
-	"random-api/httpd/handlers"
+	"random-api/handlers"
 	"github.com/gin-contrib/timeout"
 	"github.com/gin-gonic/gin"
 )
