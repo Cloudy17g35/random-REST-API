@@ -9,14 +9,12 @@ import (
 	"random-api/logger"
 	"random-api/stat_funcs"
 	"random-api/validator"
-	"time"
 	"github.com/gin-gonic/gin"
 )
 
 func getRandomNumbersAndStd(
 	context *gin.Context, 
 	signal chan<- struct{}) {
-	time.Sleep(10 * time.Second)
 	logs := logger.GetLoger()
 	validation_errors := 
 	validator.ValidateRequest(context)
