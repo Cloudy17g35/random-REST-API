@@ -16,7 +16,7 @@ import (
 func getRandomNumbersAndStd(
 	context *gin.Context, 
 	signal chan<- struct{}) {
-	logs := logger.GetLoger()
+	logs := logger.GetLogger()
 	validation_errors := 
 	validator.ValidateRequest(context)
 	if len(validation_errors) > 0 {
@@ -130,7 +130,7 @@ func getRandomNumbersAndStd(
 
 
 func RandomMeanHandler(context *gin.Context) {
-	logs := logger.GetLoger()
+	logs := logger.GetLogger()
 	signal := make(chan struct{}, 1)
 
 	go getRandomNumbersAndStd(context, signal)
