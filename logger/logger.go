@@ -8,7 +8,7 @@ import(
 const  logfile = "logs.log"
 
 
-func GetLoger() *logrus.Logger{
+func GetLogger() *logrus.Logger{
 	var logger = logrus.New()
 	logfile, _ := os.OpenFile(logfile, os.O_CREATE|os.O_WRONLY|os.O_APPEND, os.ModePerm)
 	logger.Out = logfile
