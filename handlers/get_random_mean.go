@@ -12,6 +12,7 @@ import (
 	"github.com/gin-gonic/gin"
 )
 
+
 func getRandomNumbersAndStd(
 	context *gin.Context, 
 	signal chan<- struct{}) {
@@ -129,6 +130,7 @@ func getRandomNumbersAndStd(
 
 
 func RandomMeanHandler(context *gin.Context) {
+	logs := logger.GetLoger()
 	signal := make(chan struct{}, 1)
 
 	go getRandomNumbersAndStd(context, signal)
@@ -138,6 +140,7 @@ func RandomMeanHandler(context *gin.Context) {
 		close(signal)
 
 	case <-context.Request.Context().Done():
+		logs.Errorf("request cancelation")
 		return
 	}
 
