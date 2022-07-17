@@ -8,7 +8,9 @@ import (
 )
 
 
-func AbortValidationError(context *gin.Context, validation_errors url.Values) {
+func AbortValidationError(
+	context *gin.Context, 
+	validation_errors url.Values) {
 	fmt.Printf("validation errors: %v", validation_errors)
 	message := "Validation Error, please check your inputs"
     context.AbortWithStatusJSON(
